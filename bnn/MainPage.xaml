@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="bnn.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:bnn"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+   Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1032.5" Height="634.5">
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/ảnh bìa.jpg" Opacity="1" Stretch="UniformToFill" />
+            </Grid.Background>
+            <ScrollViewer>
+                <StackPanel  Margin="40,50,40,20">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="FirstName" Header="FirstName" Margin="0,0,10,0" Grid.Row="0" Grid.Column="0"/>
+                        <TextBlock x:Name="firstName" Visibility="Collapsed" Foreground="Red" Grid.Row="1" Grid.Column="0" Margin="5,20,0,0"/>
+                        <TextBox x:Name="LastName" Header="LastName" Margin="10,0,0,0" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock x:Name="lastName" Visibility="Collapsed" Foreground="Red" Grid.Row="1" Grid.Column="1" Margin="5,20,0,0"/>
+                    </Grid>
+                    <TextBox x:Name="Email" Header="Email"/>
+                    <TextBlock x:Name="email" Visibility="Collapsed" Foreground="Red" Margin="5,20,0,0"/>
+                    <PasswordBox x:Name="Password" Header="Password"/>
+                    <TextBlock x:Name="password" Visibility="Collapsed" Foreground="Red"  Margin="5,20,0,0"/>
+                    <TextBox x:Name="MyAvatar" Header="Image"/>
+                    <TextBlock x:Name="avartar" Visibility="Collapsed" Foreground="Red"  Margin="5,20,0,0"/>
+                    <Image x:Name="Avatar" Width="150" Height="152"/>
+                    <Button Content="Choose Image" Margin="150,0,0,0" Click="Choose_Image" />
+                    <TextBox x:Name="Phone" Header="Phone"/>
+                    <TextBlock x:Name="phone" Visibility="Collapsed" Foreground="Red"  Margin="5,20,0,0"/>
+                    <TextBox x:Name="Address" Header="Address" Height="100" AcceptsReturn="True"/>
+                    <TextBlock x:Name="address" Visibility="Collapsed" Foreground="Red"  Margin="5,20,0,0"/>
+                    <TextBox x:Name="Introduction" Header="Introduction" Height="100" AcceptsReturn="True"/>
+                    <TextBlock Margin="0,15,0,0" Text="Gender"/>
+                    <StackPanel Margin="15,0,0,0" Orientation="Horizontal">
+                        <RadioButton Tag="1" Content="Male" Checked="Do_Check" />
+                        <RadioButton Tag="0" Content="Female" Checked="Do_Check"  />
+                        <RadioButton Tag="2" Content="Other" IsChecked="True" Checked="Do_Check"  />
+                    </StackPanel>
+                    <TextBlock Text="Birthday"/>
+                    <CalendarDatePicker x:Name="Birthday" DateChanged="Birthday_DateChanged" />
+                    <StackPanel Margin="30" Orientation="Horizontal">
+                        <Button x:Name="Btn_Register"  Content="Register" Margin="50,0,0,0" Width="100" Click="Do_Register"  />
+                        <Button x:Name="Btn_Reset"  Content="Reset" Margin="100,0,50,0" Width="100" Click="Do_Reset" />
+                    </StackPanel>
+
+
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+</Page>

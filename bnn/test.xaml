@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="bnn.test"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:bnn"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="545,565,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="445,390,0,0" Name="txthoa" Text="TextBox" VerticalAlignment="Top" />
+        <Grid HorizontalAlignment="Left" Height="100" Margin="1850,140,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Page>

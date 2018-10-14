@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="bnn.Views.demolistviews"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:bnn.Views"
+    xmlns:entity ="using:bnn.Entity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Pivot>
+        <Pivot.Title>
+            <TextBlock Text="Danh sach" Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </Pivot.Title>
+        <Pivot.RightHeader>
+            <CommandBar>
+                <AppBarButton>
+                    <SymbolIcon Symbol="Add"/>
+                </AppBarButton>
+                <AppBarButton>
+                    <SymbolIcon Symbol="AddFriend"/>
+                </AppBarButton>
+
+                </CommandBar>
+        </Pivot.RightHeader>
+        <PivotItem Header="List Song">
+            <Grid>
+                <ListView ItemsSource="{x:Bind ListSong}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="entity:Song">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{x:Bind thumbnail}" Width="150"/>
+                                <TextBlock Text="{x:Bind name}"/>
+                                <SymbolIcon Symbol="Play"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Tai">
+            <StackPanel>
+                <TextBox Header="Song Name" x:Name="SongName"/>
+                <TextBox Header="Song Thumbnail" x:Name="SongThumbnail"/>
+                <Button Content="Submit" Click="ButtonBase_OnClick"/>
+            </StackPanel>
+        </PivotItem>
+    </Pivot>
+
+</Page>
